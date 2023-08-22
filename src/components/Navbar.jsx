@@ -23,12 +23,18 @@ import {
     ChevronRightIcon,
   } from '@chakra-ui/icons';
   import ibsc from "../Logo/ibcs.png"
+import { useNavigate } from 'react-router-dom';
 
 const Navbar = () => {
-    const { isOpen, onToggle } = useDisclosure()
+    const { isOpen, onToggle } = useDisclosure();
+    const navigate = useNavigate();
+
+    const handleLogo = ()=>{
+      navigate("/")
+    }
 
   return (
-    <Box>
+    <Box style={{top:"0px",position:"sticky",zIndex:"2"}}>
       <Flex
         bg={useColorModeValue('white', 'gray.800')}
         color={useColorModeValue('gray.600', 'white')}
@@ -55,7 +61,7 @@ const Navbar = () => {
             textAlign={useBreakpointValue({ base: 'center', md: 'left' })}
             fontFamily={'heading'}
             color={useColorModeValue('gray.800', 'white')}>
-            <Image w={"150px"} mt={"-25px"} mb={"-20px"} src={ibsc} />
+            <Image onClick={handleLogo} w={"150px"} mt={"-25px"} mb={"-20px"} src={ibsc} />
           </Text>
 
           <Flex display={{ base: 'none', md: 'flex' }} alignItems={"center"} ml={10}>
@@ -102,6 +108,7 @@ const DesktopNav = () => {
   const popoverContentBgColor = useColorModeValue('white', 'gray.800')
 
   return (
+    <Box >
     <Stack direction={'row'} spacing={4}>
       {NAV_ITEMS.map((navItem) => (
         <Box key={navItem.label}>
@@ -141,6 +148,7 @@ const DesktopNav = () => {
         </Box>
       ))}
     </Stack>
+    </Box>
   )
 }
 
@@ -280,7 +288,7 @@ const NAV_ITEMS = [
         },
         {
           label: 'Educational Reports',
-          href: '#',
+          href: '/education-report',
         },
       ],
   },
@@ -289,7 +297,7 @@ const NAV_ITEMS = [
     children: [
         {
           label: 'Objectives',
-          href: '#',
+          href: '/about-us',
         },
         {
           label: 'Core Committee & Members',

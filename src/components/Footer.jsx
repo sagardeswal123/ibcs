@@ -9,7 +9,9 @@ import {
   Flex,
   Tag,
   useColorModeValue,
-} from '@chakra-ui/react'
+  Image,
+} from '@chakra-ui/react';
+import ibsc from "../Logo/ibcs.png"
 import { ReactNode } from 'react'
 
 const Logo = (props) => {
@@ -43,23 +45,23 @@ export default function Footer() {
       <Container as={Stack} maxW={'6xl'} py={10}>
         <SimpleGrid columns={{ base: 1, sm: 2, md: 4 }} spacing={8}>
           <Stack align={'flex-start'}>
-            <ListHeader>Product</ListHeader>
+            <ListHeader>Media</ListHeader>
             <Box as="a" href={'#'}>
-              Overview
+            Media Coverage
             </Box>
             <Stack direction={'row'} align={'center'} spacing={2}>
               <Box as="a" href={'#'}>
-                Features
+                Photo Gallery
               </Box>
-              <Tag
+              {/* <Tag
                 size={'sm'}
                 bg={useColorModeValue('green.300', 'green.800')}
                 ml={2}
                 color={'white'}>
                 New
-              </Tag>
+              </Tag> */}
             </Stack>
-            <Box as="a" href={'#'}>
+            {/* <Box as="a" href={'#'}>
               Tutorials
             </Box>
             <Box as="a" href={'#'}>
@@ -67,17 +69,17 @@ export default function Footer() {
             </Box>
             <Box as="a" href={'#'}>
               Releases
-            </Box>
+            </Box> */}
           </Stack>
           <Stack align={'flex-start'}>
-            <ListHeader>Company</ListHeader>
+            <ListHeader>Eco-Clubs</ListHeader>
             <Box as="a" href={'#'}>
-              About Us
+            Eco-Clubs for Schools and Colleges
             </Box>
             <Box as="a" href={'#'}>
-              Press
+            Awareness Material
             </Box>
-            <Box as="a" href={'#'}>
+            {/* <Box as="a" href={'#'}>
               Careers
             </Box>
             <Box as="a" href={'#'}>
@@ -85,25 +87,25 @@ export default function Footer() {
             </Box>
             <Box as="a" href={'#'}>
               Partners
-            </Box>
+            </Box> */}
           </Stack>
           <Stack align={'flex-start'}>
-            <ListHeader>Legal</ListHeader>
+            <ListHeader>Join & Support</ListHeader>
             <Box as="a" href={'#'}>
-              Cookies Policy
+              Membership form
             </Box>
             <Box as="a" href={'#'}>
-              Privacy Policy
+              Shop (Eco-friendly Products)
             </Box>
             <Box as="a" href={'#'}>
-              Terms of Service
+              Contact Us
             </Box>
-            <Box as="a" href={'#'}>
+            {/* <Box as="a" href={'#'}>
               Law Enforcement
             </Box>
             <Box as="a" href={'#'}>
               Status
-            </Box>
+            </Box> */}
           </Stack>
           <Stack align={'flex-start'}>
             <ListHeader>Follow Us</ListHeader>
@@ -142,11 +144,11 @@ export default function Footer() {
             flexGrow: 1,
             ml: 8,
           }}>
-          <Logo />
+          <Image w={"180px"} src={ibsc} />
         </Flex>
-        <Text pt={6} fontSize={'sm'} textAlign={'center'}>
+        {/* <Text pt={6} fontSize={'sm'} textAlign={'center'}>
           © 2022 Chakra Templates. All rights reserved
-        </Text>
+        </Text> */}
       </Box>
     </Box>
   )
